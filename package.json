@@ -1,0 +1,14 @@
+{
+  "name": "project1",
+  "version": "1.0.0",
+  "description": "Frontend Project",
+  "main": "project1.html",
+  "scripts": {
+    "start": "static-server"
+  },
+  "author": "Braca",
+  "license": "ISC",
+  "dependencies": {
+    "static-server": "^2.2.1"
+  }
+}
