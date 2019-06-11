@@ -15,7 +15,10 @@ function insertElement() {
 
         let cell = row.insertCell();
         let text = document.createTextNode(food);
+        let text2 = document.createTextNode("Soy otra columna");
         cell.appendChild(text);
+        cell = row.insertCell();
+        cell.appendChild(text2);
     }
     document.getElementById("foodName").focus();
 }
