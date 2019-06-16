@@ -7,15 +7,29 @@ function insertElement() {
         foods.push(food);
 
         let table = document.querySelector("table");
-        let row = table.insertRow();
-        // let th = document.createElement("th");
-        // let text = document.createTextNode(food);
-        // th.appendChild(text);
-        // row.appendChild(th);
+        let tbody;
 
-        let cell = row.insertCell();
+        //Checks if tbody exists
+        if (!document.getElementById("tableBody")) {
+            tbody = table.createTBody();
+            tbody.id = "tableBody";
+        } else {
+            tbody = document.getElementById("tableBody");
+        }
+
+        let row = tbody.insertRow();
+        let td = document.createElement("td");
         let text = document.createTextNode(food);
+        td.appendChild(text);
+        row.appendChild(td);
+
+        let date = new Date();
+        text = document.createTextNode(date.toDateString());
+        cell = row.insertCell();
         cell.appendChild(text);
+
+        //Where to put this?? 
+        document.getElementById("table").style.display = 'block';
     }
     document.getElementById("foodName").focus();
 }
@@ -28,5 +42,8 @@ document.querySelector("#foodName").addEventListener("keyup", event => {
 });
 
 window.onload = function () {
+    if (!document.getElementById("tableBody")) {
+        document.getElementById("table").style.display = 'none';
+    }
     document.getElementById("foodName").focus();
 }

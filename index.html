@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Food Organizer</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="shortcut icon" href="#">
 </head>
 
 <body>
@@ -17,8 +18,13 @@
         <input type="text" id="foodName" placeholder="food name">
         <button type="button" id="insertButton" title="Press here!" onclick="insertElement()">Insert</button>
     </div>
-    <div>
-        <table class="sortable"></table>
+    <div id="table" style="overflow-x:auto;">
+        <table class="sortable">
+            <thead>
+                <th>Hola</th>
+                <th>Chau</th>
+            </thead>
+        </table>
     </div>
 </body>
 <script src="./js/table.js"></script>
