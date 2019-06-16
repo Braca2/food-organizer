@@ -2,8 +2,9 @@ let foods = [{}];
 
 function insertElement() {
     let food = document.getElementById('foodName').value;
-    if (food) {
-        document.getElementById("foodName").value = '';
+    document.getElementById("foodName").value = '';
+
+    if (food.trim()) {
         foods.push(food);
 
         let table = document.querySelector("table");
