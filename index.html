@@ -18,16 +18,17 @@
         <input type="text" id="foodName" placeholder="food name">
         <button type="button" id="insertButton" title="Press here!" onclick="insertElement()">Insert</button>
     </div>
-    <div id="table" style="overflow-x:auto;">
-        <table class="sortable">
+    <div id="table" class="tableContainer">
+        <table id="foodTable" class="sortable">
             <thead>
-                <th>Hola</th>
-                <th>Chau</th>
+                <th class="pointer" onclick="reorder()">Food</th>
+                <th>Day of week</th>
             </thead>
         </table>
     </div>
 </body>
 <script src="./js/table.js"></script>
-<!-- <script src="./js/sorttable.js"></script> -->
+<script src="./js/sort.js"></script>
+<script src="./js/generateTable.js"></script>
 
 </html>

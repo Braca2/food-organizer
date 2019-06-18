@@ -1,4 +1,5 @@
-let foods = [{}];
+let foods = [];
+const table = document.getElementById('foodTable');
 
 function insertElement() {
     let food = document.getElementById('foodName').value;
@@ -6,8 +7,6 @@ function insertElement() {
 
     if (food.trim()) {
         foods.push(food);
-
-        let table = document.querySelector("table");
         let tbody;
 
         //Checks if tbody exists
@@ -43,8 +42,32 @@ document.querySelector("#foodName").addEventListener("keyup", event => {
 });
 
 window.onload = function () {
-    if (!document.getElementById("tableBody")) {
-        document.getElementById("table").style.display = 'none';
+    loadList();
+    if (document.getElementById("tableBody")) {
+        document.getElementById("table").style.display = 'block';
     }
     document.getElementById("foodName").focus();
+}
+
+function loadList() {
+    if (foods.length > 0) {
+        createTableBody(foods);
+    }
+}
+
+function reorder() {
+    save();
+    foods = sortList(foods);
+    replaceCellsContent(foods);
+}
+
+function replaceCellsContent(foods) {
+    for (let i = 1; i < table.rows.length; i++) {
+        table.rows[i].cells[0].innerHTML = foods[i - 1];
+    }
+    console.log("fin");
+}
+
+function save() {
+    //save to db
 }
