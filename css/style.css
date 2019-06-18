@@ -28,3 +28,7 @@ table.sortable thead {
 .tableContainer{
     display: none;
 }
+
+.btn-col{
+    margin-top: 25px;
+}

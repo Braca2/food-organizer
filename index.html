@@ -1,3 +1,6 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,23 +15,39 @@
 
 <body>
     <a href="page2.html" title="Que miras?!">Go to Page 2</a>
-    <h1>Food Organizer</h1>
-    <div>
-        <label>Food name: </label>
-        <input type="text" id="foodName" placeholder="food name">
-        <button type="button" id="insertButton" title="Press here!" onclick="insertElement()">Insert</button>
-    </div>
-    <div id="table" class="tableContainer">
-        <table id="foodTable" class="sortable">
-            <thead>
-                <th class="pointer" onclick="reorder()">Food</th>
-                <th>Day of week</th>
-            </thead>
-        </table>
+    <div class="container">
+        <h1>Food Organizer</h1>
+        <br />
+        <div class="row">
+            <div class="col-xs-10 col-sm-10 col-md-4 col-lg-4">
+                <label>Food name: </label>
+                <input type="text" id="foodName" placeholder="food name" class="form-control">
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <button type="button" id="insertButton" title="Press here!" onclick="insertElement()" class="btn btn-default btn-col">Insert</button>
+            </div>
+            <div class="col-xs-0 col-sm-0 col-md-6 col-lg-6">
+            </div>
+        </div>
+
+        <div id="table" class="tableContainer">
+            <table id="foodTable" class="table sortable">
+                <thead>
+                    <th class="pointer" onclick="reorder()">Food</th>
+                    <th>Day of week</th>
+                </thead>
+            </table>
+        </div>
     </div>
 </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://momentjs.com/downloads/moment.min.js"></script>
 <script src="./js/table.js"></script>
 <script src="./js/sort.js"></script>
 <script src="./js/generateTable.js"></script>
 
 </html>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
