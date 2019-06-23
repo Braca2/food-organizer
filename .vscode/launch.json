@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "file:///C:/Users/WD/Documents/Braca/index.html",
+            "url": "http://localhost:9080",
             "webRoot": "${workspaceFolder}"
         }
     ]

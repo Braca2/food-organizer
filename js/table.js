@@ -2,17 +2,17 @@ let foods = [];
 const table = document.getElementById('foodTable');
 
 function insertElement() {
-    let food = $('#foodName').val().trim();
+    let food = document.getElementById('foodName').value.trim();
+    document.getElementById("foodName").value = '';	
 
     if (food) {
-        $('#foodName').val('');
         foods.push(food);
         let tbody;
 
         //Checks if tbody exists
-        if (!$('#tableBody').length) {
+        if (!document.getElementById('tableBody')) {
             tbody = table.createTBody();
-            tbody.id = "tableBody";
+            tbody.id = 'tableBody';
         } else {
             tbody = document.getElementById('tableBody');
         }
@@ -23,40 +23,37 @@ function insertElement() {
         td.appendChild(text);
         row.appendChild(td);
 
-        text = document.createTextNode(moment(new Date()).format("DD/MM/YYYY"));
+        let date = new Date();
+        text = document.createTextNode(date.toDateString());
         cell = row.insertCell();
         cell.appendChild(text);
 
         //Where to put this?? 
-        $('#table').css('display','block');
+        document.getElementById("table").style.display = 'block';
     }
 
-    $('#foodName').focus();
+    document.getElementById("foodName").focus();
 }
 
-
-$( document ).ready(function() {
-    $("#foodName").keyup(function(event) {
-        if (event.key !== "Enter") 
-            return false; // Use `.key` instead.
-        
-        insertElement()
-        event.preventDefault(); // No need to `return false;`.
-      });
+document.querySelector("#foodName").addEventListener("keyup", event => {
+    if (event.key !== "Enter") return; // Use `.key` instead.	
+    
+    document.querySelector("#insertButton").click(); // Things you want to do.	
+    event.preventDefault(); // No need to `return false;`.
 });
 
 window.onload = function () {
     loadList();
 
-    if ($('#tableBody').length) {
-        $('#table').css('display', 'block');
+    if (document.getElementById("tableBody")) {
+        document.getElementById("table").style.display = 'block';
     }
 
-    $('#foodName').focus();
+    document.getElementById("foodName").focus();
 }
 
 function loadList() {
-    if (foods && foods.length > 0) {
+    if (foods.length > 0) {
         createTableBody(foods);
     }
 }
