@@ -3,18 +3,18 @@ const table = document.getElementById('foodTable');
 
 function insertElement() {
     let food = document.getElementById('foodName').value.trim();
-    document.getElementById("foodName").value = '';	
+    document.getElementById("foodName").value = '';
 
     if (food) {
         foods.push(food);
         let tbody;
 
         //Checks if tbody exists
-        if (!document.getElementById('tableBody')) {
+        if (!document.getElementById("tableBody")) {
             tbody = table.createTBody();
-            tbody.id = 'tableBody';
+            tbody.id = "tableBody";
         } else {
-            tbody = document.getElementById('tableBody');
+            tbody = document.getElementById("tableBody");
         }
 
         let row = tbody.insertRow();
@@ -31,24 +31,20 @@ function insertElement() {
         //Where to put this?? 
         document.getElementById("table").style.display = 'block';
     }
-
     document.getElementById("foodName").focus();
 }
 
 document.querySelector("#foodName").addEventListener("keyup", event => {
     if (event.key !== "Enter") return; // Use `.key` instead.	
-    
     document.querySelector("#insertButton").click(); // Things you want to do.	
     event.preventDefault(); // No need to `return false;`.
 });
 
 window.onload = function () {
     loadList();
-
     if (document.getElementById("tableBody")) {
         document.getElementById("table").style.display = 'block';
     }
-
     document.getElementById("foodName").focus();
 }
 
